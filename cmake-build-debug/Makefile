@@ -176,6 +176,33 @@ huffman/src/header.c.s:
 	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/header.c.s
 .PHONY : huffman/src/header.c.s
 
+huffman/src/huffmantree.obj: huffman/src/huffmantree.c.obj
+
+.PHONY : huffman/src/huffmantree.obj
+
+# target to build an object file
+huffman/src/huffmantree.c.obj:
+	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/huffmantree.c.obj
+.PHONY : huffman/src/huffmantree.c.obj
+
+huffman/src/huffmantree.i: huffman/src/huffmantree.c.i
+
+.PHONY : huffman/src/huffmantree.i
+
+# target to preprocess a source file
+huffman/src/huffmantree.c.i:
+	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/huffmantree.c.i
+.PHONY : huffman/src/huffmantree.c.i
+
+huffman/src/huffmantree.s: huffman/src/huffmantree.c.s
+
+.PHONY : huffman/src/huffmantree.s
+
+# target to generate assembly for a file
+huffman/src/huffmantree.c.s:
+	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/huffmantree.c.s
+.PHONY : huffman/src/huffmantree.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -191,6 +218,9 @@ help:
 	@echo ... huffman/src/header.obj
 	@echo ... huffman/src/header.i
 	@echo ... huffman/src/header.s
+	@echo ... huffman/src/huffmantree.obj
+	@echo ... huffman/src/huffmantree.i
+	@echo ... huffman/src/huffmantree.s
 .PHONY : help
 
 

@@ -88,6 +88,9 @@
 		<Unit filename="C:/Users/Pedro/Git/Huffman/huffman/src/header.c">
 			<Option target="huffman"/>
 		</Unit>
+		<Unit filename="C:/Users/Pedro/Git/Huffman/huffman/src/huffmantree.c">
+			<Option target="huffman"/>
+		</Unit>
 		<Unit filename="C:/Users/Pedro/Git/Huffman/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

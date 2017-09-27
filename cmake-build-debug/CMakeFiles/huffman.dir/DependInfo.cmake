@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Pedro/Git/Huffman/huffman/main.c" "C:/Users/Pedro/Git/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/main.c.obj"
   "C:/Users/Pedro/Git/Huffman/huffman/src/header.c" "C:/Users/Pedro/Git/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/header.c.obj"
+  "C:/Users/Pedro/Git/Huffman/huffman/src/huffmantree.c" "C:/Users/Pedro/Git/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/huffmantree.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
