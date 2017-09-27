@@ -14,7 +14,15 @@
 typedef unsigned char byte;
 typedef struct Frequency frequency;
 
+/*
+ * Allocates and initializes a 'struct Frequency'(frequency);
+ * Returns a pointer(frequency*) to the new struct.
+ */
 frequency* CreateEmptyFrequency();
+
+/*
+ * Read the file bytes in blocks of 'BUFFER_SIZE' bytes and count in the table(frequency).
+ */
 void GetBytesFrequency(FILE* read_file, frequency* frequency);
 
 #endif //HUFFMAN_HEADER_H

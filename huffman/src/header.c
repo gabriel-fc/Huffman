@@ -4,15 +4,11 @@
 
 #include "../inc/header.h"
 
-
 struct Frequency {
 
     int total_frequency;
     long long int char_frequency[MAX_CHAR_SIZE];
 };
-
-frequency* CreateEmptyFrequency();
-void GetBytesFrequency(FILE* read_file, frequency* frequency);
 
 /*
  * Allocates and initializes a 'struct Frequency'(frequency);
@@ -47,6 +43,6 @@ void GetBytesFrequency(FILE* read_file, frequency* frequency) {
             total_frequency++;
         }
     }
-    Frequency->total_frequency = total_frequency;
+    frequency->total_frequency = total_frequency;
     rewind(read_file);
 }
