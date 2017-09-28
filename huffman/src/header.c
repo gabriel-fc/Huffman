@@ -6,8 +6,8 @@
 
 struct Frequency {
 
-    int total_frequency;
-    int char_frequency[MAX_CHAR_SIZE];
+    long long int total_frequency;
+    long long int char_frequency[MAX_CHAR_SIZE];
 };
 
 /*
@@ -18,6 +18,7 @@ frequency* CreateEmptyFrequency() {
 
     frequency* new_frequency = (frequency*)malloc(sizeof(frequency));
     if(!new_frequency) {
+        printf("CreateEmptyFrequency() error!\n");
         printf("Memory allocation error!\n");
         return NULL;
     }
@@ -47,13 +48,32 @@ void GetBytesFrequency(FILE* read_file, frequency* frequency) {
     rewind(read_file);
 }
 
-//struct Frequency gets and sets.
-int GetTotalFrequency(frequency* frequency) {
+/*
+ * Gets and Sets for 'struct Frequency'.
+ */
+long long int GetTotalFrequency(frequency* frequency) {
 
     return frequency->total_frequency;
 }
 
-int GetCharFrequencyElement(frequency* frequency, int index) {
+long long int GetCharFrequencyElement(frequency* frequency, int index) {
 
     return frequency->char_frequency[index];
+}
+
+/*
+ * DEBUG FUNCTIONS (TEMPORARY)
+ */
+void PrintStructFrequency(frequency* frequency) {
+
+    printf("PrintStructFrequency():\n");
+    if(frequency != NULL) {
+        printf("\tTotal Frequency: %lld\n", frequency->total_frequency);
+        int i;
+        for(i = 0; i < MAX_CHAR_SIZE; ++i) {
+            printf("\tChar '%c' frequency: %lld\n", (byte)i, frequency->char_frequency[i]);
+        }
+    } else {
+        printf("\tNULL pointer!\n");
+    }
 }

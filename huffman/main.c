@@ -4,6 +4,7 @@
 
 void Compress(char* file_to_compress);
 void Decompress(char* file_to_decompress);
+void PrintElement(void* void_element);
 
 int main() {
 
@@ -20,6 +21,7 @@ int main() {
         printf("Invalid Operation! Try again.\n");
         scanf("%d", &operation);
     }
+    getchar();
     if(!operation) {
         printf("COMPRESS\n");
         printf("Enter the file path:\n");
@@ -45,13 +47,15 @@ void Compress(char* file_path) {
     }
     frequency* frequency_table = CreateEmptyFrequency();
     if(!frequency_table) {
-        printf("CreateEmptyFrequency() error!\n");
-        printf("Memory allocation error.\n");
         printf("Unable to compress the file!\n");
         return;
     }
     GetBytesFrequency(file_to_compress, frequency_table);
     hufftree* file_tree = CreateNewHuffTree();
+    CreateTreeList(file_tree, frequency_table);
+    BuildHuffmanTree(file_tree);
+    PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree),PrintElement);
+    printf("\n");
 }
 
 void Decompress(char* file_path) {
@@ -63,4 +67,10 @@ void Decompress(char* file_path) {
         printf("Unable to crompress the file!\n");
         return;
     }
+}
+
+void PrintElement(void* void_element) {
+
+    byte element = (byte)void_element;
+    printf("%c", element);
 }

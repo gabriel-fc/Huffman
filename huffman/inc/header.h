@@ -26,7 +26,14 @@ frequency* CreateEmptyFrequency();
 void GetBytesFrequency(FILE* read_file, frequency* frequency);
 
 
-//Gets and Sets for 'struct Frequency'
-int GetTotalFrequency(frequency* frequency);
-int GetCharFrequencyElement(frequency* frequency, int index);
+/*
+ * Gets and Sets for 'struct Frequency'.
+ */
+long long int GetTotalFrequency(frequency* frequency);
+long long int GetCharFrequencyElement(frequency* frequency, int index);
+
+/*
+ * DEBUG FUNCTIONS (TEMPORARY)
+ */
+void PrintStructFrequency(frequency* frequency);
 #endif //HUFFMAN_HEADER_H
