@@ -25,4 +25,8 @@ frequency* CreateEmptyFrequency();
  */
 void GetBytesFrequency(FILE* read_file, frequency* frequency);
 
+
+//Gets and Sets for 'struct Frequency'
+int GetTotalFrequency(frequency* frequency);
+int GetCharFrequencyElement(frequency* frequency, int index);
 #endif //HUFFMAN_HEADER_H

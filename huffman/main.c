@@ -8,7 +8,7 @@ void Decompress(char* file_to_decompress);
 int main() {
 
     int operation;
-    char* file_path[100];
+    char file_path[100];
     printf(",__________________,\n");
     printf("|!-[Marcinho Zip]-!|\n");
     printf("|                  |\n");
@@ -51,10 +51,16 @@ void Compress(char* file_path) {
         return;
     }
     GetBytesFrequency(file_to_compress, frequency_table);
-
+    hufftree* file_tree = CreateNewHuffTree();
 }
 
-void Decompress(char* file_to_decompress) {
+void Decompress(char* file_path) {
 
 
+    FILE* file_to_decompress = fopen(file_path, "r");
+    if(!file_to_decompress) {
+        printf("fopen() error!\n");
+        printf("Unable to crompress the file!\n");
+        return;
+    }
 }

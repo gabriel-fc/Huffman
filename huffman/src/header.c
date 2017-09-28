@@ -7,7 +7,7 @@
 struct Frequency {
 
     int total_frequency;
-    long long int char_frequency[MAX_CHAR_SIZE];
+    int char_frequency[MAX_CHAR_SIZE];
 };
 
 /*
@@ -45,4 +45,15 @@ void GetBytesFrequency(FILE* read_file, frequency* frequency) {
     }
     frequency->total_frequency = total_frequency;
     rewind(read_file);
+}
+
+//struct Frequency gets and sets.
+int GetTotalFrequency(frequency* frequency) {
+
+    return frequency->total_frequency;
+}
+
+int GetCharFrequencyElement(frequency* frequency, int index) {
+
+    return frequency->char_frequency[index];
 }
