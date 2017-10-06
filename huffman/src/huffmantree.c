@@ -4,6 +4,9 @@
 
 #include "../inc/huffmantree.h"
 
+/*
+ * Huffman Tree node struct.
+ */
 struct Node {
 
     void* element;
@@ -13,12 +16,18 @@ struct Node {
     node* right;
 };
 
+/*
+ * Huffman Tree main struct.
+ */
 struct HuffTree {
 
     int list_size;
     node* root;
 };
 
+/*
+ * Allocate an 'struct HuffTree', initialize all struct content and returns the pointer to the new 'hufftree'.
+ */
 hufftree* CreateNewHuffTree() {
 
     hufftree* new_hufftree = (hufftree*)malloc(sizeof(hufftree));
@@ -32,6 +41,9 @@ hufftree* CreateNewHuffTree() {
     return new_hufftree;
 }
 
+/*
+ * Allocate an 'struct Node', initialize all struct content and returns the pointer to the new 'node'.
+ */
 node* CreateHuffTreeNode(void* element, long long int frequency){
 
     node* new_node = (node*)malloc(sizeof(node));
@@ -48,6 +60,9 @@ node* CreateHuffTreeNode(void* element, long long int frequency){
     return new_node;
 }
 
+/*
+ * Add the 'add_node' to the correctly position on the huffman tree list (from smallest to the largest frequency).
+ */
 void TreeListAdd(hufftree* hufftree, node* add_node) {
 
     if(hufftree->root != NULL) {
@@ -76,6 +91,9 @@ void TreeListAdd(hufftree* hufftree, node* add_node) {
     }
 }
 
+/*
+ * Read the frequency table and create the nodes to the characteres with a frequency > 0 and calls the function TreeListAdd() to correctly position the nodes in the list.
+ */
 void CreateTreeList(hufftree* hufftree, frequency* frequency) {
 
     if(!hufftree && !frequency) {
@@ -86,6 +104,7 @@ void CreateTreeList(hufftree* hufftree, frequency* frequency) {
         int i;
         node* tree_node = NULL;
         for(i = 0; i < MAX_CHAR_SIZE; ++i) {
+            //If the char 'i' frequency is > 0 create a node and add to the list.
             if(GetCharFrequencyElement(frequency,i)) {
                 tree_node = CreateHuffTreeNode((byte*)i, GetCharFrequencyElement(frequency,i));
                 TreeListAdd(hufftree, tree_node);
@@ -94,6 +113,9 @@ void CreateTreeList(hufftree* hufftree, frequency* frequency) {
     }
 }
 
+/*
+ * Logically removes the node from the list and returns the pointer of the removed node.
+ */
 node* TreeListRemove(hufftree* hufftree) {
 
     if(hufftree->list_size) {
@@ -106,6 +128,9 @@ node* TreeListRemove(hufftree* hufftree) {
     }
 }
 
+/*
+ * Allocate a new internal node (not a element node), calculate the node frequency and set the pointers of the left and right nodes.
+ */
 node* BuildInternalTreeNode(node* left, node* right) {
 
     node* new_node = (node*)malloc(sizeof(node));
@@ -123,6 +148,9 @@ node* BuildInternalTreeNode(node* left, node* right) {
     return new_node;
 }
 
+/*
+ * Build the tree-structure of huffman tree with the organized list.
+ */
 void BuildHuffmanTree(hufftree* hufftree) {
 
     if(!hufftree) {
@@ -133,15 +161,18 @@ void BuildHuffmanTree(hufftree* hufftree) {
         node* aux1 = NULL;
         node* aux2 = NULL;
         node* new_node = NULL;
+        //If the list have 2 or more elements remove the 2 smallest frequency nodes and build a internal node to make the tree-structure.
         while(hufftree->root->next != NULL) {
             aux1 = TreeListRemove(hufftree);
             aux2 = TreeListRemove(hufftree);
             new_node = BuildInternalTreeNode(aux1, aux2);
+            //add the new internal node to the list to continue the process.
             TreeListAdd(hufftree, new_node);
         }
     }
 }
 
+//THIS FUNCTION WILL BE MODIFIED TO PRINT THE TREE DIRECTLY IN THE FILE!
 void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*)) {
 
     if(root != NULL) {
@@ -158,6 +189,7 @@ void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*)) {
     }
 }
 
+//UNFINISHED
 hufftree* MakeTreeFromPreOrder(char* pre_order) {
 
 

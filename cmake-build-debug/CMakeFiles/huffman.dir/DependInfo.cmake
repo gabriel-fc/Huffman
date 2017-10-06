@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Pedro/Git/Huffman/huffman/main.c" "C:/Users/Pedro/Git/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/main.c.obj"
-  "C:/Users/Pedro/Git/Huffman/huffman/src/header.c" "C:/Users/Pedro/Git/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/header.c.obj"
-  "C:/Users/Pedro/Git/Huffman/huffman/src/huffmantree.c" "C:/Users/Pedro/Git/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/huffmantree.c.obj"
+  "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/main.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/main.c.obj"
+  "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/header.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/header.c.obj"
+  "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/huffmantree.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/huffmantree.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

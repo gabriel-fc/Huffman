@@ -2,8 +2,8 @@
 #include "inc/header.h"
 #include "inc/huffmantree.h"
 
-void Compress(char* file_to_compress);
-void Decompress(char* file_to_decompress);
+void Compress(char* file_path);
+void Decompress(char* file_path);
 void PrintElement(void* void_element);
 
 int main() {
@@ -38,22 +38,28 @@ int main() {
 
 void Compress(char* file_path) {
 
-    //open the file;
+    //Open the file;
     FILE* file_to_compress = fopen(file_path, "r");
     if(!file_to_compress) {
         printf("fopen() error!\n");
         printf("Unable to crompress the file!\n");
         return;
     }
+    //Create a new frequency table to store frequency data from the file.
     frequency* frequency_table = CreateEmptyFrequency();
     if(!frequency_table) {
         printf("Unable to compress the file!\n");
         return;
     }
+    //Get the frequency data from the file and store in the frequency table.
     GetBytesFrequency(file_to_compress, frequency_table);
+    //Create and initialize a new huffman tree.
     hufftree* file_tree = CreateNewHuffTree();
+    //Create tree nodes and organize in a list from the smallest to the largest frequency.
     CreateTreeList(file_tree, frequency_table);
+    //Build the huffman tree with the organized list (smallest to the largest frequency).
     BuildHuffmanTree(file_tree);
+    //Pre Order test. (TEMPORARY)
     PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree),PrintElement);
     printf("\n");
 }

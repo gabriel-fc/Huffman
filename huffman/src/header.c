@@ -4,6 +4,9 @@
 
 #include "../inc/header.h"
 
+/*
+ * Frequency table struct.
+ */
 struct Frequency {
 
     long long int total_frequency;
