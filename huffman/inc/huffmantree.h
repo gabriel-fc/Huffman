@@ -43,6 +43,7 @@ void BuildHuffmanTree(hufftree* hufftree);
 //THIS FUNCTION WILL BE MODIFIED TO PRINT THE TREE DIRECTLY IN THE FILE!
 void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*));
 
+//UNFINISHED
 hufftree* MakeTreeFromPreOrder(char* pre_order);
 
 /*

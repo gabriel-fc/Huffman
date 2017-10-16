@@ -149,6 +149,33 @@ huffman/main.c.s:
 	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/main.c.s
 .PHONY : huffman/main.c.s
 
+huffman/src/charpath.obj: huffman/src/charpath.c.obj
+
+.PHONY : huffman/src/charpath.obj
+
+# target to build an object file
+huffman/src/charpath.c.obj:
+	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/charpath.c.obj
+.PHONY : huffman/src/charpath.c.obj
+
+huffman/src/charpath.i: huffman/src/charpath.c.i
+
+.PHONY : huffman/src/charpath.i
+
+# target to preprocess a source file
+huffman/src/charpath.c.i:
+	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/charpath.c.i
+.PHONY : huffman/src/charpath.c.i
+
+huffman/src/charpath.s: huffman/src/charpath.c.s
+
+.PHONY : huffman/src/charpath.s
+
+# target to generate assembly for a file
+huffman/src/charpath.c.s:
+	$(MAKE) -f CMakeFiles\huffman.dir\build.make CMakeFiles/huffman.dir/huffman/src/charpath.c.s
+.PHONY : huffman/src/charpath.c.s
+
 huffman/src/header.obj: huffman/src/header.c.obj
 
 .PHONY : huffman/src/header.obj
@@ -215,6 +242,9 @@ help:
 	@echo ... huffman/main.obj
 	@echo ... huffman/main.i
 	@echo ... huffman/main.s
+	@echo ... huffman/src/charpath.obj
+	@echo ... huffman/src/charpath.i
+	@echo ... huffman/src/charpath.s
 	@echo ... huffman/src/header.obj
 	@echo ... huffman/src/header.i
 	@echo ... huffman/src/header.s

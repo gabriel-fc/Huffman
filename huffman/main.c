@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "inc/header.h"
 #include "inc/huffmantree.h"
+#include "inc/charpath.h"
 
 void Compress(char* file_path);
 void Decompress(char* file_path);
@@ -59,9 +60,14 @@ void Compress(char* file_path) {
     CreateTreeList(file_tree, frequency_table);
     //Build the huffman tree with the organized list (smallest to the largest frequency).
     BuildHuffmanTree(file_tree);
+
     //Pre Order test. (TEMPORARY)
     PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree),PrintElement);
     printf("\n");
+
+    //Create and initialize a new char hash.
+    charhash* tree_charhash = CreateEmptyCharHash();
+
 }
 
 void Decompress(char* file_path) {

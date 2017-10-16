@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/main.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/main.c.obj"
+  "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/charpath.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/charpath.c.obj"
   "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/header.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/header.c.obj"
   "C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/huffmantree.c" "C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug/CMakeFiles/huffman.dir/huffman/src/huffmantree.c.obj"
   )
