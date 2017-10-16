@@ -1,1 +1,4 @@
-CMakeLists.txt not found in C:\Users\Pedro\Git\Huffman
+"C:\Program Files\JetBrains\CLion 2017.2.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\pedro\Documents\Git - Repositorios\Huffman"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/pedro/Documents/Git - Repositorios/Huffman/cmake-build-debug
