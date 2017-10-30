@@ -203,6 +203,20 @@ node* GetHuffTreeRoot(hufftree* hufftree) {
     return hufftree->root;
 }
 
+node* GetNodeLeft(node* root) {
+
+    return root->left;
+}
+
+node* GetNodeRight(node* root) {
+
+    return root->right;
+}
+
+void* GetNodeElement(node* root) {
+
+    return root->element;
+}
 /*
  * DEBUG FUNCTIONS (TEMPORARY)
  */

@@ -68,6 +68,12 @@ void Compress(char* file_path) {
     //Create and initialize a new char hash.
     charhash* tree_charhash = CreateEmptyCharHash();
 
+    //Map all the char paths of the tree on the char hash.
+    MapCharPaths(tree_charhash, GetHuffTreeRoot(file_tree), 0, '2');
+
+    //Print char hash (TEMPORARY)
+    PrintCharHash(tree_charhash);
+
 }
 
 void Decompress(char* file_path) {

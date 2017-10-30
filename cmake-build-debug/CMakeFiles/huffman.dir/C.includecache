@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
+stdlib.h
+-
+string.h
+-
+huffmantree.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
+stdio.h
+-
+
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
 stdio.h
 -
@@ -27,6 +37,12 @@ inc/header.h
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
 inc/huffmantree.h
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
+inc/charpath.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/charpath.c
+../inc/charpath.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
 
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/header.c
 ../inc/header.h
