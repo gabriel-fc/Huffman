@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libbinary_tree.h.a  CMakeFiles/binary_tree.h.dir/main.c.obj CMakeFiles/binary_tree.h.dir/D_/GabrielFc/CLionProjects/src/binary_tree.c.obj CMakeFiles/binary_tree.h.dir/D_/GabrielFc/CLionProjects/src/linked_list.c.obj
+C:\MinGW\bin\ranlib.exe libbinary_tree.h.a
