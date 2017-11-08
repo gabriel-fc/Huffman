@@ -18,6 +18,9 @@ struct CharHash {
 
 char buffer[BUFFER_SIZE];
 
+/*
+ * Allocate an 'struct CharHash', initialize all struct content and returns the pointer to the new 'charhash'.
+ */
 charhash* CreateEmptyCharHash() {
 
     charhash* new_charhash = (charhash*)malloc(sizeof(charhash));
@@ -32,7 +35,10 @@ charhash* CreateEmptyCharHash() {
     return new_charhash;
 }
 
-chardata* CreateCharData(unsigned char id, char* path, int path_size) {
+/*
+ * Allocate an 'struct CharData', initialize all struct content and returns the pointer to the new 'chardata'.
+ */
+chardata* CreateCharData(unsigned char id, int path_size) {
 
     chardata* new_chardata = (chardata*)malloc(sizeof(chardata));
     if(new_chardata == NULL) {
@@ -50,48 +56,28 @@ chardata* CreateCharData(unsigned char id, char* path, int path_size) {
     return new_chardata;
 }
 
+/*
+ * The function traverses the entire huffman tree and map to the hash the corresponding path of each leaf in the binary format.
+ */
 void MapCharPaths(charhash* charhash, node* root, int buffer_position, char bit) {
 
-    if(bit != '2') {
+    if(bit != '2' && root != NULL) {
         buffer[buffer_position] = bit;
     }
     if(root != NULL) {
         if(GetNodeRight(root) == NULL && GetNodeLeft(root) == NULL) {
             buffer[++buffer_position] = '\0';
             byte node_element = (byte)GetNodeElement(root);
-            chardata* new_chardata = CreateCharData(node_element, buffer, strlen(buffer));
+            chardata* new_chardata = CreateCharData(node_element, strlen(buffer));
             charhash->data[(int)node_element] = new_chardata;
         } else {
-            MapCharPaths(charhash, GetNodeLeft(root), buffer_position+1, '0');
-            MapCharPaths(charhash, GetNodeLeft(root), buffer_position+1, '1');
-        }
-    }
-}
-
-void PrintCharData(chardata* chardata) {
-
-    if(chardata != NULL) {
-        printf("[%c] ->", chardata->id);
-        int i;
-        for(i = 0; i < chardata->path_size; ++i) {
-            printf("%c", chardata->path[i]);
-        }
-        printf("\n");
-    }
-}
-
-void PrintCharHash(charhash* charhash) {
-
-    if(charhash != NULL) {
-        printf("CHAR HASH\n");
-        int i;
-        for(i = 0; i < MAX_CHAR_SIZE; ++i) {
-            if(charhash->data[i] != NULL) {
-                PrintCharData(charhash->data[i]);
+            if(bit != '2') {
+                MapCharPaths(charhash, GetNodeLeft(root), buffer_position+1, '0');
+                MapCharPaths(charhash, GetNodeRight(root), buffer_position+1, '1');
             } else {
-                printf("NULL!\n");
+                MapCharPaths(charhash, GetNodeLeft(root), buffer_position, '0');
+                MapCharPaths(charhash, GetNodeRight(root), buffer_position, '1');
             }
         }
     }
 }
-
