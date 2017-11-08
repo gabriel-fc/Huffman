@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc liblinked_list.h.a  CMakeFiles/linked_list.h.dir/main.c.obj CMakeFiles/linked_list.h.dir/D_/GabrielFc/CLionProjects/src/binary_tree.c.obj CMakeFiles/linked_list.h.dir/D_/GabrielFc/CLionProjects/src/linked_list.c.obj
+C:\MinGW\bin\ranlib.exe liblinked_list.h.a
