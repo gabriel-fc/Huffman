@@ -43,7 +43,7 @@ void Compress(char* file_path) {
     FILE* file_to_compress = fopen(file_path, "r");
     if(!file_to_compress) {
         printf("fopen() error!\n");
-        printf("Unable to crompress the file!\n");
+        printf("Unable to compress the file!\n");
         return;
     }
     //Create a new frequency table to store frequency data from the file.
