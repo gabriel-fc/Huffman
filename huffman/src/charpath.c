@@ -35,12 +35,12 @@ charhash* CreateEmptyCharHash() {
     return new_charhash;
 }
 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD//
+//=======//
 /*
  * Allocate an 'struct CharData', initialize all struct content and returns the pointer to the new 'chardata'.
  */
->>>>>>> origin/Pedro
+//>>>>>>> origin/Pedro//
 chardata* CreateCharData(unsigned char id, int path_size) {
 
     chardata* new_chardata = (chardata*)malloc(sizeof(chardata));
@@ -55,7 +55,7 @@ chardata* CreateCharData(unsigned char id, int path_size) {
         new_charpath[i] = buffer[i];
     }
     new_chardata->path_size = path_size;
-<<<<<<< HEAD
+//<<<<<<< HEAD//
     return new_chardata;
 }
 
@@ -85,10 +85,10 @@ chardata* CreateCharData(unsigned char id, int path_size) {
 
 
 
-=======
-    new_chardata->path = new_charpath;
-    return new_chardata;
-}
+//=======//
+    //new_chardata->path = new_charpath;
+    //return new_chardata;
+//}//
 
 /*
  * The function traverses the entire huffman tree and map to the hash the corresponding path of each leaf in the binary format.
@@ -115,4 +115,4 @@ void MapCharPaths(charhash* charhash, node* root, int buffer_position, char bit)
         }
     }
 }
->>>>>>> origin/Pedro
+//>>>>>>> origin/Pedro//
