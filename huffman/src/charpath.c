@@ -16,6 +16,11 @@ struct CharHash {
     void* data[MAX_CHAR_SIZE];
 };
 
+char buffer[BUFFER_SIZE];
+
+/*
+ * Allocate an 'struct CharHash', initialize all struct content and returns the pointer to the new 'charhash'.
+ */
 charhash* CreateEmptyCharHash() {
 
     charhash* new_charhash = (charhash*)malloc(sizeof(charhash));
@@ -30,6 +35,12 @@ charhash* CreateEmptyCharHash() {
     return new_charhash;
 }
 
+<<<<<<< HEAD
+=======
+/*
+ * Allocate an 'struct CharData', initialize all struct content and returns the pointer to the new 'chardata'.
+ */
+>>>>>>> origin/Pedro
 chardata* CreateCharData(unsigned char id, int path_size) {
 
     chardata* new_chardata = (chardata*)malloc(sizeof(chardata));
@@ -38,7 +49,13 @@ chardata* CreateCharData(unsigned char id, int path_size) {
         return NULL;
     }
     new_chardata->id = id;
+    char* new_charpath = (char*)malloc(sizeof(char)*path_size);
+    int i;
+    for(i = 0; i < path_size; ++i) {
+        new_charpath[i] = buffer[i];
+    }
     new_chardata->path_size = path_size;
+<<<<<<< HEAD
     return new_chardata;
 }
 
@@ -68,3 +85,34 @@ chardata* CreateCharData(unsigned char id, int path_size) {
 
 
 
+=======
+    new_chardata->path = new_charpath;
+    return new_chardata;
+}
+
+/*
+ * The function traverses the entire huffman tree and map to the hash the corresponding path of each leaf in the binary format.
+ */
+void MapCharPaths(charhash* charhash, node* root, int buffer_position, char bit) {
+
+    if(bit != '2' && root != NULL) {
+        buffer[buffer_position] = bit;
+    }
+    if(root != NULL) {
+        if(GetNodeRight(root) == NULL && GetNodeLeft(root) == NULL) {
+            buffer[++buffer_position] = '\0';
+            byte node_element = (byte)GetNodeElement(root);
+            chardata* new_chardata = CreateCharData(node_element, strlen(buffer));
+            charhash->data[(int)node_element] = new_chardata;
+        } else {
+            if(bit != '2') {
+                MapCharPaths(charhash, GetNodeLeft(root), buffer_position+1, '0');
+                MapCharPaths(charhash, GetNodeRight(root), buffer_position+1, '1');
+            } else {
+                MapCharPaths(charhash, GetNodeLeft(root), buffer_position, '0');
+                MapCharPaths(charhash, GetNodeRight(root), buffer_position, '1');
+            }
+        }
+    }
+}
+>>>>>>> origin/Pedro

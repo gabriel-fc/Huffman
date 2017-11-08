@@ -50,7 +50,9 @@ hufftree* MakeTreeFromPreOrder(char* pre_order);
  * Gets and Sets for 'struct HuffTree'.
  */
 node* GetHuffTreeRoot(hufftree* hufftree);
-
+node* GetNodeLeft(node* root);
+node* GetNodeRight(node* root);
+void* GetNodeElement(node* root);
 /*
  * DEBUG FUNCTIONS (TEMPORARY)
  */

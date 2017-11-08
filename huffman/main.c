@@ -49,6 +49,7 @@ void Compress(char* file_path) {
     //Create a new frequency table to store frequency data from the file.
     frequency* frequency_table = CreateEmptyFrequency();
     if(!frequency_table) {
+        printf("CreateEmptyFrequency() error!\n");
         printf("Unable to compress the file!\n");
         return;
     }
@@ -56,22 +57,23 @@ void Compress(char* file_path) {
     GetBytesFrequency(file_to_compress, frequency_table);
     //Create and initialize a new huffman tree.
     hufftree* file_tree = CreateNewHuffTree();
+    if(!file_tree) {
+        printf("CreateNewHuffTree() error!\n");
+        printf("Unable to compress the file!\n");
+        return;
+    }
     //Create tree nodes and organize in a list from the smallest to the largest frequency.
     CreateTreeList(file_tree, frequency_table);
     //Build the huffman tree with the organized list (smallest to the largest frequency).
     BuildHuffmanTree(file_tree);
-
-    //Pre Order test. (TEMPORARY)
-    PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree),PrintElement);
-    printf("\n");
-
     //Create and initialize a new char hash.
     charhash* tree_charhash = CreateEmptyCharHash();
+    //Map all the char paths of the tree on the char hash.
+    MapCharPaths(tree_charhash, GetHuffTreeRoot(file_tree), 0, '2');
 
 }
 
 void Decompress(char* file_path) {
-
 
     FILE* file_to_decompress = fopen(file_path, "r");
     if(!file_to_decompress) {
