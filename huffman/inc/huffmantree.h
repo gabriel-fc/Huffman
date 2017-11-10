@@ -4,10 +4,11 @@
 
 #ifndef HUFFMAN_HUFFMANTREE_H
 #define HUFFMAN_HUFFMANTREE_H
-#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "header.h"
 
+typedef unsigned char byte;
 typedef struct Node node;
 typedef struct HuffTree hufftree;
 
@@ -39,13 +40,14 @@ node* BuildInternalTreeNode(node* left, node* right);
  * Build the tree-structure of huffman tree with the organized list.
  */
 void BuildHuffmanTree(hufftree* hufftree);
-
-//THIS FUNCTION WILL BE MODIFIED TO PRINT THE TREE DIRECTLY IN THE FILE!
-void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*));
-
-//UNFINISHED
-hufftree* MakeTreeFromPreOrder(char* pre_order);
-
+/*
+ * Print the element content into the file.
+ */
+void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*, FILE*), FILE* compressed_file);
+/*
+ * Calculate the size of the tree pre-order.
+ */
+int TreeSize(node* root);
 /*
  * Gets and Sets for 'struct HuffTree'.
  */
@@ -53,9 +55,5 @@ node* GetHuffTreeRoot(hufftree* hufftree);
 node* GetNodeLeft(node* root);
 node* GetNodeRight(node* root);
 void* GetNodeElement(node* root);
-/*
- * DEBUG FUNCTIONS (TEMPORARY)
- */
-void PrintStructHuffTreeList(hufftree* hufftree, void (*PrintElement)(void*));
+#endif
 
-#endif //HUFFMAN_HUFFMANTREE_H

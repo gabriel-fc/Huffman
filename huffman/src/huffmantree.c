@@ -172,27 +172,41 @@ void BuildHuffmanTree(hufftree* hufftree) {
     }
 }
 
-//THIS FUNCTION WILL BE MODIFIED TO PRINT THE TREE DIRECTLY IN THE FILE!
-void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*)) {
+/*
+ * Print the element content into the file.
+ */
+void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*, FILE*), FILE* compressed_file) {
 
     if(root != NULL) {
         if(root->element == NULL) {
-            printf("*");
+            fprintf(compressed_file, "*");
         } else {
             if((byte)root->element == '*' || (byte)root->element == '\\') {
-                printf("\\");
+                fprintf(compressed_file, "\\");
             }
-            (*PrintElement)(root->element);
+            (*PrintElement)(root->element, compressed_file);
         }
-        PrintHuffTreePreOrder(root->left, (*PrintElement));
-        PrintHuffTreePreOrder(root->right, (*PrintElement));
+        PrintHuffTreePreOrder(root->left, (*PrintElement), compressed_file);
+        PrintHuffTreePreOrder(root->right, (*PrintElement), compressed_file);
     }
 }
 
-//UNFINISHED
-hufftree* MakeTreeFromPreOrder(char* pre_order) {
+/*
+ * Calculate the size of the tree pre-order.
+ */
+int TreeSize(node* root) {
 
-
+    int current_char_size = 0;
+    if(root != NULL) {
+        if((byte)GetNodeElement(root) == '*' || (byte)GetNodeElement(root) == '\\') {
+            current_char_size = 2;
+        } else {
+            current_char_size = 1;
+        }
+        return (current_char_size + TreeSize(GetNodeLeft(root)) + TreeSize(GetNodeRight(root)));
+    } else {
+        return 0;
+    }
 }
 
 /*

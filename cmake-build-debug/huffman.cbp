@@ -85,6 +85,12 @@
 		<Unit filename="C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h">
 			<Option target="huffman"/>
 		</Unit>
+		<Unit filename="C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h">
+			<Option target="huffman"/>
+		</Unit>
+		<Unit filename="C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h">
+			<Option target="huffman"/>
+		</Unit>
 		<Unit filename="C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/main.c">
 			<Option target="huffman"/>
 		</Unit>
