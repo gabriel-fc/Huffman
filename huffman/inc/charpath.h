@@ -4,13 +4,10 @@
 
 #ifndef HUFFMAN_CHARPATH_H
 #define HUFFMAN_CHARPATH_H
-
 #include <stdlib.h>
 #include <string.h>
-#include "huffmantree.h"
 #include <stdio.h>
-
-#define BUFFER_SIZE 256
+#include "huffmantree.h"
 
 typedef unsigned char byte;
 typedef struct CharData chardata;
@@ -28,5 +25,15 @@ chardata* CreateCharData(unsigned char id, int path_size);
  * The function traverses the entire huffman tree and map to the hash the corresponding path of each leaf in the binary format.
  */
 void MapCharPaths(charhash* charhash, node* root, int buffer_position, char bit);
-
-#endif //HUFFMAN_CHARPATH_H
+/*
+ * Calculate the size of the trash from the final byte of the compressed file.
+ */
+int TrashSize(frequency* file_frequency, charhash* file_charhash);
+/*
+ * Gets and Sets for 'struct CharHash' and 'struct CharData'.
+ */
+int GetCharDataPathSize(chardata* chardata);
+byte GetCharDataId(chardata* chardata);
+char* GetCharDataPath(chardata* chardata);
+void* GetCharHashDataElement(charhash* charhash, int index);
+#endif

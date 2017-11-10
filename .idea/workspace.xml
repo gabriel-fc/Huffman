@@ -65,8 +65,13 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/huffman/main.c">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="0">
               <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+=======
+            <state relative-caret-position="408">
+              <caret line="90" column="39" lean-forward="false" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+>>>>>>> origin/Pedro
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -74,6 +79,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="charpath.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/huffman/src/charpath.c">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,6 +87,46 @@
               <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
               <folding>
                 <element signature="e#206#533#0" expanded="false" />
+=======
+      <file leaf-file-name="header.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/huffman/src/header.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-117">
+              <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="huffmantree.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/huffman/inc/huffmantree.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="e#102#120#0" expanded="true" />
+>>>>>>> origin/Pedro
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="charpath.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/huffman/inc/charpath.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="70" lean-forward="false" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
+              <folding>
+                <element signature="e#97#116#0" expanded="true" />
+=======
+      <file leaf-file-name="header.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/huffman/inc/header.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="e#92#110#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,10 +135,11 @@
       <file leaf-file-name="charpath.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/huffman/inc/charpath.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="70" lean-forward="false" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
+            <state relative-caret-position="476">
+              <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding>
-                <element signature="e#97#116#0" expanded="true" />
+                <element signature="e#96#115#0" expanded="true" />
+>>>>>>> origin/Pedro
               </folding>
             </state>
           </provider>
@@ -106,16 +153,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/huffman/inc/header.h" />
         <option value="$PROJECT_DIR$/huffman/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/huffman/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/huffman/src/huffmantree.c" />
         <option value="$PROJECT_DIR$/huffman/src/header.c" />
+=======
+>>>>>>> origin/Pedro
         <option value="$PROJECT_DIR$/huffman/inc/huffmantree.h" />
+        <option value="$PROJECT_DIR$/huffman/src/huffmantree.c" />
         <option value="$PROJECT_DIR$/huffman/inc/charpath.h" />
-        <option value="$PROJECT_DIR$/huffman/main.c" />
+        <option value="$PROJECT_DIR$/huffman/src/header.c" />
         <option value="$PROJECT_DIR$/huffman/src/charpath.c" />
+        <option value="$PROJECT_DIR$/huffman/main.c" />
+        <option value="$PROJECT_DIR$/huffman/inc/header.h" />
       </list>
     </option>
   </component>
@@ -133,7 +185,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="514" />
+    <option name="y" value="-16" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -430,12 +483,32 @@
       <workItem from="1507261255881" duration="4491000" />
       <workItem from="1507346995233" duration="107000" />
       <workItem from="1507742240635" duration="3154000" />
+<<<<<<< HEAD
       <workItem from="1509448703096" duration="2160000" />
+=======
+      <workItem from="1508196769926" duration="5160000" />
+      <workItem from="1508278451299" duration="3057000" />
+      <workItem from="1508452610244" duration="681000" />
+      <workItem from="1508886223302" duration="277000" />
+      <workItem from="1509397785254" duration="652000" />
+      <workItem from="1509840419461" duration="2014000" />
+      <workItem from="1509974117938" duration="7929000" />
+      <workItem from="1510094949739" duration="32000" />
+      <workItem from="1510103114574" duration="2896000" />
+      <workItem from="1510167941235" duration="13383000" />
+      <workItem from="1510193002746" duration="612000" />
+      <workItem from="1510286732757" duration="1087000" />
+      <workItem from="1510287943247" duration="1255000" />
+>>>>>>> origin/Pedro
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="20952000" />
+=======
+    <option name="totallyTimeSpent" value="57834000" />
+>>>>>>> origin/Pedro
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -450,6 +523,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10927505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32391304" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
@@ -457,13 +531,25 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11247335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4728145" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32391304" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24565217" sideWeight="0.52398723" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24565217" sideWeight="0.4760128" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/Pedro
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> origin/Pedro
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -479,11 +565,77 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
       <option name="time" value="3" />
+=======
+      <option name="time" value="12" />
+>>>>>>> origin/Pedro
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="true" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/src/huffmantree.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/inc/huffmantree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/src/header.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/inc/header.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> origin/Pedro
     <entry file="file://$PROJECT_DIR$/huffman/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -499,18 +651,28 @@
         <state relative-caret-position="255">
           <caret line="15" column="70" lean-forward="false" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#97#116#0" expanded="true" />
+=======
+            <element signature="e#96#115#0" expanded="true" />
+>>>>>>> origin/Pedro
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/huffman/src/charpath.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="731">
           <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
           <folding>
             <element signature="e#206#533#0" expanded="false" />
           </folding>
+=======
+        <state relative-caret-position="578">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
@@ -542,7 +704,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
@@ -581,7 +749,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
@@ -634,7 +808,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
@@ -673,7 +853,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
@@ -698,7 +884,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+          </folding>
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
@@ -750,19 +942,50 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+          <caret line="5" column="148" lean-forward="false" selection-start-line="5" selection-start-column="148" selection-end-line="5" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/huffman/src/huffmantree.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+=======
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2128">
+          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/huffman/src/huffmantree.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#321#773#0" expanded="false" />
+            <element signature="e#775#1318#0" expanded="false" />
+            <element signature="e#1320#2314#0" expanded="false" />
+            <element signature="e#2316#3128#0" expanded="false" />
+            <element signature="e#3130#3488#0" expanded="false" />
+            <element signature="e#3490#4130#0" expanded="false" />
+            <element signature="e#4132#4971#0" expanded="false" />
+            <element signature="e#5616#6068#0" expanded="false" />
+            <element signature="e#6070#6190#0" expanded="false" />
+            <element signature="e#6192#6249#0" expanded="false" />
+            <element signature="e#6251#6310#0" expanded="false" />
+            <element signature="e#6312#6375#0" expanded="false" />
+            <element signature="e#6376#6413#0" expanded="false" />
+            <element signature="e#6376#6950#0" expanded="false" />
+          </folding>
+>>>>>>> origin/Pedro
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/huffman/inc/huffmantree.h">
+    <entry file="file://$PROJECT_DIR$/huffman/src/charpath.c">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="408">
           <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
         </state>
@@ -789,10 +1012,45 @@
           <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+=======
+        <state relative-caret-position="490">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="90" column="39" lean-forward="false" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/inc/charpath.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="e#96#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/inc/huffmantree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#102#120#0" expanded="true" />
+>>>>>>> origin/Pedro
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/huffman/inc/charpath.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -817,6 +1075,22 @@
           <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
           <folding>
             <element signature="e#206#533#0" expanded="false" />
+=======
+    <entry file="file://$PROJECT_DIR$/huffman/src/header.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman/inc/header.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#92#110#0" expanded="true" />
+>>>>>>> origin/Pedro
           </folding>
         </state>
       </provider>

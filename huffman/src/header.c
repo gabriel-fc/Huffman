@@ -52,6 +52,79 @@ void GetBytesFrequency(FILE* read_file, frequency* frequency) {
 }
 
 /*
+ * Take the binary number in the array and return the correspondent integer.
+ */
+int BinaryToInteger(int binary_number[], int bits) {
+
+    int i;
+    int integer_number = 0;
+    for(i = 0; i < bits; ++i) {
+        integer_number += binary_number[i]*pow(2,(bits-1-i));
+    }
+    return integer_number;
+}
+
+void PrintHeader(int trash_size, int tree_size, FILE* compressed_file) {
+
+    char first_2bytes[16];
+    int remainder = 0;
+    int current_number;
+    int i;
+    //Passing trash size to the binary format into the first 3 variables of first_2bytes string.
+    current_number = trash_size;
+    for(i = 2; i > 0; --i) {
+        if(!current_number) {
+            first_2bytes[i] = 0;
+        } else {
+            remainder = current_number%2;
+            if(current_number/2) {
+                first_2bytes[i] = 1;
+            } else {
+                first_2bytes[i] = 0;
+            }
+            current_number = remainder;
+        }
+    }
+    //Passing trash size to the binary format into the last 13 variables of first_2bytes string.
+    current_number = tree_size;
+    for(i = 15; i > 2; --i) {
+        if(!current_number) {
+            first_2bytes[i] = 0;
+        } else {
+            remainder = current_number%2;
+            if(current_number/2) {
+                first_2bytes[i] = 1;
+            } else {
+                first_2bytes[i] = 0;
+            }
+            current_number = remainder;
+        }
+    }
+    int print_byte = 0;
+    for(i = 0; i < 16; ++i) {
+        if(i == 8) {
+            fprintf(compressed_file, "%c", (byte)print_byte);
+            print_byte = 0;
+        }
+        if(first_2bytes[i]) {
+            print_byte = SetBiti(print_byte, i%8);
+        }
+    }
+}
+
+int IsBitiSet(byte byte, int i) {
+
+    int mask = 1 << i;
+    return (byte ^ mask);
+}
+
+int SetBiti(int byte, int i) {
+
+    int mask = 1 << i;
+    return (byte | mask);
+}
+
+/*
  * Gets and Sets for 'struct Frequency'.
  */
 long long int GetTotalFrequency(frequency* frequency) {
@@ -62,21 +135,4 @@ long long int GetTotalFrequency(frequency* frequency) {
 long long int GetCharFrequencyElement(frequency* frequency, int index) {
 
     return frequency->char_frequency[index];
-}
-
-/*
- * DEBUG FUNCTIONS (TEMPORARY)
- */
-void PrintStructFrequency(frequency* frequency) {
-
-    printf("PrintStructFrequency():\n");
-    if(frequency != NULL) {
-        printf("\tTotal Frequency: %lld\n", frequency->total_frequency);
-        int i;
-        for(i = 0; i < MAX_CHAR_SIZE; ++i) {
-            printf("\tChar '%c' frequency: %lld\n", (byte)i, frequency->char_frequency[i]);
-        }
-    } else {
-        printf("\tNULL pointer!\n");
-    }
 }

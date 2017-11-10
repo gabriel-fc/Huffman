@@ -1,11 +1,16 @@
 #include <stdio.h>
-#include "inc/header.h"
 #include "inc/huffmantree.h"
 #include "inc/charpath.h"
+#include "inc/header.h"
+
+#define COMPRESSED_FILE_PATH "C:\\Users\\pedro\\Desktop\\compressed.huff"
+
+typedef unsigned char byte;
 
 void Compress(char* file_path);
 void Decompress(char* file_path);
-void PrintElement(void* void_element);
+void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* compressed_file, int trash);
+void PrintElement(void* void_element, FILE* compressed_file);
 
 int main() {
 
@@ -70,7 +75,22 @@ void Compress(char* file_path) {
     charhash* tree_charhash = CreateEmptyCharHash();
     //Map all the char paths of the tree on the char hash.
     MapCharPaths(tree_charhash, GetHuffTreeRoot(file_tree), 0, '2');
-
+    //Create the new file (compressed file).
+    FILE* compressed_file = fopen(COMPRESSED_FILE_PATH, "w");
+    if(!compressed_file) {
+        printf("fopen() error!\n");
+        printf("'compressed_file' memory allocation error!\n");
+        printf("Unable to compress the file!\n");
+        return;
+    }
+    //Calculating the trash size.
+    int trash_size = TrashSize(frequency_table, tree_charhash);
+    //Calculation the tree size.
+    int tree_size = TreeSize(GetHuffTreeRoot(file_tree));
+    //Print the first 2 bytes of the file (trash size and tree size).
+    PrintHeader(trash_size, tree_size, compressed_file);
+    //Compression process, the function read the 'file_to_compress' and convert all the bytes to the compressed format into the 'compressed_file'.
+   // CompressTheBytes(tree_charhash, file_to_compress, compressed_file, trash_size);
 }
 
 void Decompress(char* file_path) {
@@ -78,13 +98,18 @@ void Decompress(char* file_path) {
     FILE* file_to_decompress = fopen(file_path, "r");
     if(!file_to_decompress) {
         printf("fopen() error!\n");
-        printf("Unable to crompress the file!\n");
+        printf("Unable to compress the file!\n");
         return;
     }
+    else{}
 }
 
-void PrintElement(void* void_element) {
+void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* compressed_file, int trash) {
+
+}
+
+void PrintElement(void* void_element, FILE* compressed_file) {
 
     byte element = (byte)void_element;
-    printf("%c", element);
+    fprintf(compressed_file, "%c", element);
 }

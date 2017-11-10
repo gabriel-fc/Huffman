@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+huffmantree.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
+stdio.h
+-
+stdlib.h
+-
+header.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/main.c
+stdio.h
+-
+inc/huffmantree.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
+inc/charpath.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
+inc/header.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/charpath.c
+../inc/charpath.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/header.c
+../inc/header.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
+
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/huffmantree.c
+../inc/huffmantree.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
+

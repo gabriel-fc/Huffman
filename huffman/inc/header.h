@@ -4,9 +4,9 @@
 
 #ifndef HUFFMAN_HEADER_H
 #define HUFFMAN_HEADER_H
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define MAX_CHAR_SIZE 257
 #define BUFFER_SIZE 1024
@@ -24,16 +24,20 @@ frequency* CreateEmptyFrequency();
  * Read the file bytes in blocks of 'BUFFER_SIZE' bytes and count in the table(frequency).
  */
 void GetBytesFrequency(FILE* read_file, frequency* frequency);
+/*
+ * Take the binary number in the array and return the correspondent integer.
+ */
+int BinaryToInteger(int binary_number[], int bits);
 
+void PrintHeader(int trash_size, int tree_size, FILE* compressed_file);
+
+int IsBitiSet(byte byte, int i);
+
+int SetBiti(int byte, int i);
 
 /*
  * Gets and Sets for 'struct Frequency'.
  */
 long long int GetTotalFrequency(frequency* frequency);
 long long int GetCharFrequencyElement(frequency* frequency, int index);
-
-/*
- * DEBUG FUNCTIONS (TEMPORARY)
- */
-void PrintStructFrequency(frequency* frequency);
-#endif //HUFFMAN_HEADER_H
+#endif

@@ -6,7 +6,7 @@
 
 struct CharData {
 
-    unsigned char id;
+    byte id;
     int path_size;
     char * path;
 };
@@ -16,7 +16,7 @@ struct CharHash {
     void* data[MAX_CHAR_SIZE];
 };
 
-char buffer[BUFFER_SIZE];
+char buffer[MAX_CHAR_SIZE];
 
 /*
  * Allocate an 'struct CharHash', initialize all struct content and returns the pointer to the new 'charhash'.
@@ -115,4 +115,47 @@ void MapCharPaths(charhash* charhash, node* root, int buffer_position, char bit)
         }
     }
 }
+<<<<<<< HEAD
 //>>>>>>> origin/Pedro//
+=======
+
+/*
+ * Calculate the size of the trash from the final byte of the compressed file.
+ */
+int TrashSize(frequency* file_frequency, charhash* file_charhash) {
+
+    int i;
+    int total_file_bits = 0;
+    for(i = 0; i < MAX_CHAR_SIZE; ++i) {
+        if(GetCharFrequencyElement(file_frequency, i)) {
+            //Multipling the bits size of every different charactere with his frequency and acumulate the total of the compressed file bits.
+            total_file_bits += GetCharDataPathSize(GetCharHashDataElement(file_charhash, i))*(GetCharFrequencyElement(file_frequency, i));
+        }
+    }
+    int trash_size = 8-(total_file_bits%8);
+    return trash_size;
+}
+
+/*
+ * Gets and Sets for 'struct CharHash' and 'struct CharData'.
+ */
+int GetCharDataPathSize(chardata* chardata) {
+
+    return chardata->path_size;
+}
+
+byte GetCharDataId(chardata* chardata) {
+
+    return chardata->id;
+}
+
+char* GetCharDataPath(chardata* chardata) {
+
+    return chardata->path;
+}
+
+void* GetCharHashDataElement(charhash* charhash, int index) {
+
+    return charhash->data[index];
+}
+>>>>>>> origin/Pedro
