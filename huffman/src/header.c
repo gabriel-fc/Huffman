@@ -54,7 +54,7 @@ void GetBytesFrequency(FILE* read_file, frequency* frequency) {
 /*
  * Take the binary number in the array and return the correspondent integer.
  */
-int BinaryToInteger(int binary_number[], int bits) {
+int BinaryToInteger(short binary_number[], int bits) {
 
     int i;
     int integer_number = 0;
@@ -66,33 +66,43 @@ int BinaryToInteger(int binary_number[], int bits) {
 
 void PrintHeader(int trash_size, int tree_size, FILE* compressed_file) {
 
-    char first_2bytes[16];
+    short first_2bytes[16];
     int remainder = 0;
     int current_number;
     int i;
-    //Passing trash size to the binary format into the first 3 variables of first_2bytes string.
-    current_number = trash_size;
-    for(i = 2; i > 0; --i) {
-        if(!current_number) {
-            first_2bytes[i] = 0;
-        } else {
-            remainder = current_number%2;
-            if(current_number/2) {
-                first_2bytes[i] = 1;
-            } else {
+    if(trash_size > 8 ||  trash_size < 0) {
+        printf("PrintHeader error!\n");
+        printf("Invalid trash size!\n");
+        printf("Unable to print the header of the final file.\n");
+        return;
+    } else {
+        //Passing trash size to the binary format into the first 3 variables of first_2bytes string.
+        if(trash_size == 8) {
+            trash_size = 0;
+        }
+        current_number = trash_size;
+        for(i = 2; i >= 0; --i) {
+            if(!current_number) {
                 first_2bytes[i] = 0;
+            } else {
+                remainder = current_number/2;
+                if(current_number%2) {
+                    first_2bytes[i] = 1;
+                } else {
+                    first_2bytes[i] = 0;
+                }
+                current_number = remainder;
             }
-            current_number = remainder;
         }
     }
-    //Passing trash size to the binary format into the last 13 variables of first_2bytes string.
+    //Passing tree size to the binary format into the last 13 variables of first_2bytes string.
     current_number = tree_size;
     for(i = 15; i > 2; --i) {
         if(!current_number) {
             first_2bytes[i] = 0;
         } else {
-            remainder = current_number%2;
-            if(current_number/2) {
+            remainder = current_number/2;
+            if(current_number%2) {
                 first_2bytes[i] = 1;
             } else {
                 first_2bytes[i] = 0;
@@ -100,7 +110,7 @@ void PrintHeader(int trash_size, int tree_size, FILE* compressed_file) {
             current_number = remainder;
         }
     }
-    int print_byte = 0;
+    byte print_byte = 0;
     for(i = 0; i < 16; ++i) {
         if(i == 8) {
             fprintf(compressed_file, "%c", (byte)print_byte);
@@ -110,18 +120,19 @@ void PrintHeader(int trash_size, int tree_size, FILE* compressed_file) {
             print_byte = SetBiti(print_byte, i%8);
         }
     }
+    fprintf(compressed_file, "%c", (byte)print_byte);
 }
 
-int IsBitiSet(byte byte, int i) {
+int IsBitiSet(byte file_byte, int i) {
 
-    int mask = 1 << i;
-    return (byte ^ mask);
+    byte mask = 1 << i;
+    return (file_byte & mask);
 }
 
-int SetBiti(int byte, int i) {
+byte SetBiti(byte file_byte, int i) {
 
-    int mask = 1 << i;
-    return (byte | mask);
+    byte mask = 1 << i;
+    return (file_byte | mask);
 }
 
 /*
