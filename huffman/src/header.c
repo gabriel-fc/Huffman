@@ -38,16 +38,17 @@ frequency* CreateEmptyFrequency() {
  */
 void GetBytesFrequency(FILE* read_file, frequency* frequency) {
 
+    //Buffer to store the bytes read from the file.
     byte file_bytes[BUFFER_SIZE];
-    int read_size, total_frequency = 0;
+    int read_size;
     int i;
+    //Repeat the process while have something to read in the file.
     while((read_size = fread(&file_bytes, 1, BUFFER_SIZE, read_file)) >= 1) {
         for(i = 0; i < read_size; ++i) {
             frequency->char_frequency[file_bytes[i]]++;
-            total_frequency++;
+            frequency->total_frequency++;
         }
     }
-    frequency->total_frequency = total_frequency;
     rewind(read_file);
 }
 

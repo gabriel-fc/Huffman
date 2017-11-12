@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define MAX_CHAR_SIZE 257
+#define MAX_CHAR_SIZE 256
 #define BUFFER_SIZE 1024
 
 typedef unsigned char byte;

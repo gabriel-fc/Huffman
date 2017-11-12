@@ -24,7 +24,7 @@ char buffer[MAX_CHAR_SIZE];
 charhash* CreateEmptyCharHash() {
 
     charhash* new_charhash = (charhash*)malloc(sizeof(charhash));
-    if(new_charhash == NULL) {
+    if(!new_charhash) {
         printf("Memory allocation error!\n");
         return NULL;
     }

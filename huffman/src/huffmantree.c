@@ -67,14 +67,14 @@ void TreeListAdd(hufftree* hufftree, node* add_node) {
 
     if(hufftree->root != NULL) {
         node* current = hufftree->root;
-        if(add_node->frequency < hufftree->root->frequency) {
+        if(add_node->frequency <= hufftree->root->frequency) {
             add_node->next = hufftree->root;
             hufftree->root = add_node;
             hufftree->list_size++;
             return;
         } else {
-            while (current->next != NULL) {
-                if (add_node->frequency < current->next->frequency) {
+            while(current->next != NULL) {
+                if(add_node->frequency <= current->next->frequency) {
                     add_node->next = current->next;
                     current->next = add_node;
                     hufftree->list_size++;
@@ -106,7 +106,9 @@ void CreateTreeList(hufftree* hufftree, frequency* frequency) {
         for(i = 0; i < MAX_CHAR_SIZE; ++i) {
             //If the char 'i' frequency is > 0 create a node and add to the list.
             if(GetCharFrequencyElement(frequency,i)) {
+                //Create the node.
                 tree_node = CreateHuffTreeNode((byte*)i, GetCharFrequencyElement(frequency,i));
+                //Add the node to the list.
                 TreeListAdd(hufftree, tree_node);
             }
         }
@@ -140,6 +142,8 @@ node* BuildInternalTreeNode(node* left, node* right) {
         printf("Unable to Build internal node.\n");
         return NULL;
     }
+    left->next = NULL;
+    right->next = NULL;
     new_node->element = NULL;
     new_node->frequency = left->frequency + right->frequency;
     new_node->next = NULL;

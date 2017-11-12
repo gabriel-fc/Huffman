@@ -35,12 +35,12 @@ C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/main.c
 stdio.h
 -
+inc/header.h
+C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
 inc/huffmantree.h
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/huffmantree.h
 inc/charpath.h
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/charpath.h
-inc/header.h
-C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/inc/header.h
 
 C:/Users/pedro/Documents/Git - Repositorios/Huffman/huffman/src/charpath.c
 ../inc/charpath.h

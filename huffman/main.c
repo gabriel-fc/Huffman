@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include "inc/header.h"
 #include "inc/huffmantree.h"
 #include "inc/charpath.h"
-#include "inc/header.h"
 
 #define COMPRESSED_FILE_PATH "C:\\Users\\pedro\\Desktop\\compressed.huff"
 #define READ_BUFFER_SIZE 1024
@@ -96,7 +96,7 @@ void Compress(char* file_path) {
     //Print the pre-order of the tree in the file.
     PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree), PrintElement, compressed_file);
     //Compression process, the function read the 'file_to_compress' and convert all the bytes to the compressed format into the 'compressed_file'.
-    CompressTheBytes(tree_charhash, file_to_compress, compressed_file);
+    //CompressTheBytes(tree_charhash, file_to_compress, compressed_file);
 }
 
 void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* compressed_file) {
@@ -108,7 +108,7 @@ void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* com
     byte print_byte = '\0';
 
     //Buffer control variables.
-    int read_buffer_position, read_size, print_byte_bit_position = 8;
+    int read_buffer_position, read_size, print_byte_bit_position = 7;
 
     //Charpath control variables.
     int path_size = 0;
@@ -133,7 +133,7 @@ void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* com
                 //If the 8 bits of print_byte was set, print de byte in the file and start again.
                 if(print_byte_bit_position == -1) {
                     fprintf(compressed_file, "%c", print_byte);
-                    print_byte_bit_position = 8;
+                    print_byte_bit_position = 7;
                     print_byte = '\0';
                 }
                 bit_path_position++;
