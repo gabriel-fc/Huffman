@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< HEAD
 #include "inc/huffmantree.h"
 #include "inc/charpath.h"
 #include "inc/header.h"
@@ -12,11 +13,30 @@ void Compress(char* file_path);
 void Decompress(char* file_path);
 void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* compressed_file);
 void PrintElement(void* void_element, FILE* compressed_file);
+=======
+#include "huffmantree.h"
+#include "charpath.h"
+#include "header.h"
+
+#define READ_BUFFER_SIZE 1024
+
+void Compress(char* file_path);
+void Decompress(char* file_path, char* file_path_out);
+void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* compressed_file);
+void PrintElement(void* void_element, FILE* compressed_file);
+void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file);
+
+
+>>>>>>> origin/Karen
 
 int main() {
 
     int operation;
+<<<<<<< HEAD
     char file_path[100];
+=======
+    char file_path[100], file_path_out[100];
+>>>>>>> origin/Karen
     printf(",__________________,\n");
     printf("|!-[Marcinho Zip]-!|\n");
     printf("|                  |\n");
@@ -31,14 +51,26 @@ int main() {
     getchar();
     if(!operation) {
         printf("COMPRESS\n");
+<<<<<<< HEAD
         printf("Enter the file path:\n");
+=======
+        printf("Enter the file path to compress:\n");
+>>>>>>> origin/Karen
         gets(file_path);
         Compress(file_path);
     } else {
         printf("DECOMPRESS\n");
+<<<<<<< HEAD
         printf("Enter the file path:");
         gets(file_path);
         //Decompress(file_path);
+=======
+        printf("Enter the file path to descompress:");
+        gets(file_path);
+        printf("Enter the new file path:");
+        gets(file_path_out);
+        Decompress(file_path, file_path_out);
+>>>>>>> origin/Karen
     }
     return 0;
 }
@@ -49,10 +81,17 @@ int main() {
 void Compress(char* file_path) {
 
     //Open the file;
+<<<<<<< HEAD
     FILE* file_to_compress = fopen(file_path, "r");
     if(!file_to_compress) {
         printf("fopen() error!\n");
         printf("Unable to compress the file!\n");
+=======
+    FILE* file_to_compress = fopen(file_path, "rb");
+    if(!file_to_compress) {
+        printf("fopen() error!\n");
+        printf("Unable to crompress the file!\n");
+>>>>>>> origin/Karen
         return;
     }
     //Create a new frequency table to store frequency data from the file.
@@ -80,7 +119,11 @@ void Compress(char* file_path) {
     //Map all the char paths of the tree on the char hash.
     MapCharPaths(tree_charhash, GetHuffTreeRoot(file_tree), 0, '2');
     //Create the new file (compressed file).
+<<<<<<< HEAD
     FILE* compressed_file = fopen(COMPRESSED_FILE_PATH, "w");
+=======
+    FILE* compressed_file = fopen("compressed.huff", "wb");
+>>>>>>> origin/Karen
     if(!compressed_file) {
         printf("fopen() error!\n");
         printf("'compressed_file' memory allocation error!\n");
@@ -94,7 +137,11 @@ void Compress(char* file_path) {
     //Print the first 2 bytes of the file (trash size and tree size).
     PrintHeader(trash_size, tree_size, compressed_file);
     //Print the pre-order of the tree in the file.
+<<<<<<< HEAD
     PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree), PrintElement, compressed_file);
+=======
+    PrintHuffTreePreOrder(GetHuffTreeRoot(file_tree), compressed_file);
+>>>>>>> origin/Karen
     //Compression process, the function read the 'file_to_compress' and convert all the bytes to the compressed format into the 'compressed_file'.
     CompressTheBytes(tree_charhash, file_to_compress, compressed_file);
 }
@@ -108,7 +155,11 @@ void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* com
     byte print_byte = '\0';
 
     //Buffer control variables.
+<<<<<<< HEAD
     int read_buffer_position, read_size, print_byte_bit_position = 8;
+=======
+    int read_buffer_position, read_size, print_byte_bit_position = 0;
+>>>>>>> origin/Karen
 
     //Charpath control variables.
     int path_size = 0;
@@ -129,11 +180,19 @@ void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* com
                 if(bit_path[bit_path_position] == '1') {
                     print_byte = SetBiti(print_byte, print_byte_bit_position);
                 }
+<<<<<<< HEAD
                 print_byte_bit_position--;
                 //If the 8 bits of print_byte was set, print de byte in the file and start again.
                 if(print_byte_bit_position == -1) {
                     fprintf(compressed_file, "%c", print_byte);
                     print_byte_bit_position = 8;
+=======
+                print_byte_bit_position++;
+                //If the 8 bits of print_byte was set, print de byte in the file and start again.
+                if(print_byte_bit_position == 8) {
+                    fprintf(compressed_file, "%c", print_byte);
+                    print_byte_bit_position = 0;
+>>>>>>> origin/Karen
                     print_byte = '\0';
                 }
                 bit_path_position++;
@@ -141,11 +200,17 @@ void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* com
             bit_path_position = 0;
         }
     }
+<<<<<<< HEAD
+=======
+
+    fprintf(compressed_file, "%c", print_byte);
+>>>>>>> origin/Karen
 }
 
 /*
  * Decompression main function.
  */
+<<<<<<< HEAD
 void Decompress(char* file_path) {
 
     FILE* file_to_decompress = fopen(file_path, "r");
@@ -161,4 +226,89 @@ void PrintElement(void* void_element, FILE* compressed_file) {
 
     byte element = (byte)void_element;
     fprintf(compressed_file, "%c", element);
+=======
+void Decompress(char* file_path, char* file_path_out) {
+
+    FILE* file_to_decompress = fopen(file_path, "rb");
+    if(!file_to_decompress) {
+        printf("fopen() error!\n");
+        printf("Unable to descompress the file!\n");
+        return;
+    }
+    FILE* output_file = fopen(file_path_out, "wb");
+    if(!output_file) {
+        printf("fopen() error!\n");
+        printf("Unable to descompress the new file!\n");
+        return;
+    }
+
+    int size_file = HeaderRead(file_to_decompress);
+    byte string_tree[size_file];
+    node *new_ht = NULL;
+    
+    ReadNewTree(file_to_decompress, size_file, string_tree);
+    new_ht = CreateHTDecompress(string_tree, new_ht, size_file);
+    DecompressTheBytes(new_ht, file_to_decompress, output_file);
+    
+    fclose(file_to_decompress);
+    fclose(output_file);
+
+}
+
+
+void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file){
+    long long int size_current;
+    int j, i, bit, flag = 0;
+    byte last_byte;
+    byte *current = (byte*) malloc(1024 * sizeof(byte));
+    node *new_node = root;
+    
+    
+    while((size_current = fread(current, 1, 1024, file_to_decompress)) >= 1){
+        if(flag){
+            for (i = 7; i >= 0; --i){
+                    if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
+                    fprintf(output_file, "%c", (byte)GetNodeElement(new_node));
+                    new_node = root;
+                }
+                bit = is_bit_i_set(last_byte, i);
+                if(!bit)
+                    new_node = GetNodeLeft(new_node);
+                else
+                    new_node = GetNodeRight(new_node);
+            }
+        }
+        
+        flag = 1;
+        last_byte = current[--size_current];
+        
+        for (i = 0; i < size_current; ++i){
+            for (j = 7; j >= 0; --j) {
+                if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
+                    fprintf(output_file, "%c", (byte)GetNodeElement(new_node));
+                    new_node = root;
+                }
+                bit = is_bit_i_set(current[i], j);
+                if(!bit)
+                    new_node = GetNodeLeft(new_node);
+                else
+                    new_node = GetNodeRight(new_node);
+            }
+        }
+    }
+
+    for (i = 7; i >= trash; --i){
+            
+        if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
+            fprintf(output_file, "%c", (byte)GetNodeElement(new_node));
+            new_node = root;
+        }
+        bit = is_bit_i_set(last_byte, i);
+        if(!bit)
+            new_node = GetNodeLeft(new_node);
+        else
+            new_node = GetNodeRight(new_node);
+    }
+    
+>>>>>>> origin/Karen
 }
