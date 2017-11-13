@@ -3,7 +3,7 @@
 #include <time.h>
 #include "inc/BinaryTree.h"
 #include "inc/LinkedList.h"
-//gcc main.c ../src/binary_tree.c ../src/linked_list.c -Ibinary_tree.h -Ilinked_list.h -o main//
+//gcc main.c src/BinarTree.c src/LinkedList.c -IBinaryTree -ILinkedList -o main//
 int main(){
     printf("Deus eh top\n");
     long int random, * j = (long int*) malloc(sizeof(long int)), first_of_sequence;
