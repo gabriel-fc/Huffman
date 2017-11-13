@@ -27,13 +27,13 @@ void GetBytesFrequency(FILE* read_file, frequency* frequency);
 /*
  * Take the binary number in the array and return the correspondent integer.
  */
-int BinaryToInteger(int binary_number[], int bits);
+int BinaryToInteger(short binary_number[], int bits);
 
 void PrintHeader(int trash_size, int tree_size, FILE* compressed_file);
 
-int IsBitiSet(byte byte, int i);
+int IsBitiSet(byte file_byte, int i);
 
-int SetBiti(int byte, int i);
+byte SetBiti(byte file_byte, int i);
 
 /*
  * Gets and Sets for 'struct Frequency'.
