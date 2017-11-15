@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/test_tad.dir/main.c.o CMakeFiles/test_tad.dir/src/header.c.o CMakeFiles/test_tad.dir/src/charpath.c.o CMakeFiles/test_tad.dir/src/huffmantree.c.o  -o test_tad -lcunit 

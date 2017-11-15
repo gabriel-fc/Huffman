@@ -1,13 +1,14 @@
 //
-// Created by Pedro on 27/09/2017.
+// Created by karen on 15/11/17.
 //
 
 #ifndef HUFFMAN_HUFFMANTREE_H
 #define HUFFMAN_HUFFMANTREE_H
-#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "header.h"
 
+typedef unsigned char byte;
 typedef struct Node node;
 typedef struct HuffTree hufftree;
 
@@ -23,6 +24,9 @@ node* CreateHuffTreeNode(void* element, long long int frequency);
  * Add the 'add_node' to the correctly position on the huffman tree list (smallest to the largest frequency).
  */
 void TreeListAdd(hufftree* hufftree, node* add_node);
+
+
+void printList(hufftree* tree);
 /*
  * Read the frequency table and create the nodes to the characteres with a frequency > 0 and calls the function TreeListAdd() to correctly position the nodes in the list.
  */
@@ -39,21 +43,23 @@ node* BuildInternalTreeNode(node* left, node* right);
  * Build the tree-structure of huffman tree with the organized list.
  */
 void BuildHuffmanTree(hufftree* hufftree);
-
-//THIS FUNCTION WILL BE MODIFIED TO PRINT THE TREE DIRECTLY IN THE FILE!
-void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*));
-
-//UNFINISHED
-hufftree* MakeTreeFromPreOrder(char* pre_order);
-
+/*
+ * Print the element content into the file.
+ */
+void PrintHuffTreePreOrder(node* root, FILE* compressed_file);
+/*
+ * Calculate the size of the tree pre-order.
+ */
+int TreeSize(node* root);
 /*
  * Gets and Sets for 'struct HuffTree'.
  */
 node* GetHuffTreeRoot(hufftree* hufftree);
+node* GetNodeLeft(node* root);
+node* GetNodeRight(node* root);
+void* GetNodeElement(node* root);
 
-/*
- * DEBUG FUNCTIONS (TEMPORARY)
- */
-void PrintStructHuffTreeList(hufftree* hufftree, void (*PrintElement)(void*));
+
+void ReadNewTree(FILE* read_file, int size_file , byte *string_tree);
 
 #endif //HUFFMAN_HUFFMANTREE_H

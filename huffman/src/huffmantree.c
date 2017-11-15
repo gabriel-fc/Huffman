@@ -1,7 +1,8 @@
 //
-// Created by Pedro on 27/09/2017.
+// Created by karen on 15/11/17.
 //
 
+#include "../inc/header.h"
 #include "../inc/huffmantree.h"
 
 /*
@@ -64,32 +65,21 @@ node* CreateHuffTreeNode(void* element, long long int frequency){
  * Add the 'add_node' to the correctly position on the huffman tree list (from smallest to the largest frequency).
  */
 void TreeListAdd(hufftree* hufftree, node* add_node) {
-
-    if(hufftree->root != NULL) {
-        node* current = hufftree->root;
-        if(add_node->frequency < hufftree->root->frequency) {
-            add_node->next = hufftree->root;
-            hufftree->root = add_node;
-            hufftree->list_size++;
-            return;
-        } else {
-            while (current->next != NULL) {
-                if (add_node->frequency < current->next->frequency) {
-                    add_node->next = current->next;
-                    current->next = add_node;
-                    hufftree->list_size++;
-                    return;
-                }
-                current = current->next;
-            }
-            current->next = add_node;
-            hufftree->list_size++;
-        }
-    } else {
+    if(hufftree->root == NULL || (add_node->frequency < hufftree->root->frequency)){
+        add_node->next = hufftree->root;
         hufftree->root = add_node;
+        hufftree->list_size++;
+    }else{
+        node* current = hufftree->root;
+        while(current->next != NULL && current->next->frequency < add_node->frequency){
+            current = current->next;
+        }
+        add_node->next = current->next;
+        current->next = add_node;
         hufftree->list_size++;
     }
 }
+
 
 /*
  * Read the frequency table and create the nodes to the characteres with a frequency > 0 and calls the function TreeListAdd() to correctly position the nodes in the list.
@@ -152,7 +142,6 @@ node* BuildInternalTreeNode(node* left, node* right) {
  * Build the tree-structure of huffman tree with the organized list.
  */
 void BuildHuffmanTree(hufftree* hufftree) {
-
     if(!hufftree) {
         printf("BuildHuffmanTree() error!\n");
         printf("NULL pointer.\n");
@@ -172,27 +161,46 @@ void BuildHuffmanTree(hufftree* hufftree) {
     }
 }
 
-//THIS FUNCTION WILL BE MODIFIED TO PRINT THE TREE DIRECTLY IN THE FILE!
-void PrintHuffTreePreOrder(node* root, void(*PrintElement)(void*)) {
-
-    if(root != NULL) {
-        if(root->element == NULL) {
-            printf("*");
-        } else {
-            if((byte)root->element == '*' || (byte)root->element == '\\') {
-                printf("\\");
-            }
-            (*PrintElement)(root->element);
+/*
+ * Print the element content into the file.
+ */
+void PrintHuffTreePreOrder(node* root, FILE* compressed_file) {
+    if(root->left == NULL && root->right == NULL) {
+        if((byte)root->element == '*' || (byte)root->element == '\\') {
+            byte aux = '\\';
+            fprintf(compressed_file, "%c", aux);
         }
-        PrintHuffTreePreOrder(root->left, (*PrintElement));
-        PrintHuffTreePreOrder(root->right, (*PrintElement));
+        fprintf(compressed_file, "%c", (byte)root->element);
+        return;
     }
+
+    if(root->element == NULL)
+        fprintf(compressed_file, "%c",'*');
+    else
+        fprintf(compressed_file, "%c", (byte)root->element);
+
+    if(root->left != NULL)
+        PrintHuffTreePreOrder(root->left, compressed_file);
+    if(root->right != NULL)
+        PrintHuffTreePreOrder(root->right, compressed_file);
+
 }
 
-//UNFINISHED
-hufftree* MakeTreeFromPreOrder(char* pre_order) {
-
-
+/*
+ * Calculate the size of the tree pre-order.
+ */
+int TreeSize(node* root) {
+    int current_char_size = 0;
+    if(root != NULL) {
+        if((byte)GetNodeElement(root) == '*' || (byte)GetNodeElement(root) == '\\') {
+            current_char_size = 2;
+        } else {
+            current_char_size = 1;
+        }
+        return (current_char_size + TreeSize(GetNodeLeft(root)) + TreeSize(GetNodeRight(root)));
+    } else {
+        return 0;
+    }
 }
 
 /*
@@ -201,6 +209,51 @@ hufftree* MakeTreeFromPreOrder(char* pre_order) {
 node* GetHuffTreeRoot(hufftree* hufftree) {
 
     return hufftree->root;
+}
+
+node* GetNodeLeft(node* root) {
+
+    return root->left;
+}
+
+node* GetNodeRight(node* root) {
+
+    return root->right;
+}
+
+void* GetNodeElement(node* root) {
+
+    return root->element;
+}
+
+/*
+ * Descompress
+*/
+
+int count_global = 0;
+
+void ReadNewTree(FILE* read_file, int size_file , byte *string_tree){
+    fread(string_tree, 1, size_file, read_file);
+}
+
+node* CreateHTDecompress(byte* pre_order, node *ht, int size){
+    if(count_global < size){
+        if(pre_order[count_global] == '\\'){
+            ++count_global;
+            ht = CreateHuffTreeNode((byte*)pre_order[count_global], 0);
+            ++count_global;
+        } else if(pre_order[count_global] == '*'){
+            ht = CreateHuffTreeNode((byte*)pre_order[count_global], 0);
+            ++count_global;
+            ht->left = CreateHTDecompress(pre_order, ht->left, size);
+            ht->right = CreateHTDecompress(pre_order, ht->right, size);
+        } else {
+            ht = CreateHuffTreeNode((byte*)pre_order[count_global], 0);
+            ++count_global;
+        }
+    }
+
+    return ht;
 }
 
 /*

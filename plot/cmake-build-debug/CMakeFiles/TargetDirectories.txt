@@ -1,0 +1,5 @@
+D:/GabrielFc/CLionProjects/plot/cmake-build-debug/CMakeFiles/plot.dir
+D:/GabrielFc/CLionProjects/plot/cmake-build-debug/CMakeFiles/linked_list.h.dir
+D:/GabrielFc/CLionProjects/plot/cmake-build-debug/CMakeFiles/binary_tree.h.dir
+D:/GabrielFc/CLionProjects/plot/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GabrielFc/CLionProjects/plot/cmake-build-debug/CMakeFiles/rebuild_cache.dir

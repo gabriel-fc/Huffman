@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/GabrielFc/CLionProjects/inc/binary_tree.h
+
+D:/GabrielFc/CLionProjects/inc/linked_list.h
+
+D:/GabrielFc/CLionProjects/plot/main.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+../inc/binary_tree.h
+D:/GabrielFc/CLionProjects/inc/binary_tree.h
+../inc/linked_list.h
+D:/GabrielFc/CLionProjects/inc/linked_list.h
+
+D:/GabrielFc/CLionProjects/src/binary_tree.c
+stdio.h
+-
+stdlib.h
+-
+../inc/binary_tree.h
+D:/GabrielFc/CLionProjects/inc/binary_tree.h
+
+D:/GabrielFc/CLionProjects/src/linked_list.c
+stdio.h
+-
+stdlib.h
+-
+../inc/linked_list.h
+D:/GabrielFc/CLionProjects/inc/linked_list.h
+
