@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/huffman.dir/main.c.o CMakeFiles/huffman.dir/src/header.c.o CMakeFiles/huffman.dir/src/huffmantree.c.o CMakeFiles/huffman.dir/src/charpath.c.o  -o huffman -lm 

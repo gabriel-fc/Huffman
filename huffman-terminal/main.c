@@ -1,14 +1,14 @@
 #include <stdio.h>
-#include "inc/header.h"
-#include "inc/huffmantree.h"
-#include "inc/charpath.h"
-
+#include "huffmantree.h"
+#include "charpath.h"
+#include "header.h"
 
 #define READ_BUFFER_SIZE 1024
 
 void Compress(char* file_path);
 void Decompress(char* file_path, char* file_path_out);
 void CompressTheBytes(charhash* tree_charhash, FILE* file_to_compress, FILE* compressed_file);
+void PrintElement(void* void_element, FILE* compressed_file);
 void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file);
 
 
@@ -82,7 +82,7 @@ void Compress(char* file_path) {
     //Map all the char paths of the tree on the char hash.
     MapCharPaths(tree_charhash, GetHuffTreeRoot(file_tree), 0, '2');
     //Create the new file (compressed file).
-    FILE* compressed_file = fopen("/home/karen/CLionProjects/huffman/compressed.huff", "wb");
+    FILE* compressed_file = fopen("compressed.huff", "wb");
     if(!compressed_file) {
         printf("fopen() error!\n");
         printf("'compressed_file' memory allocation error!\n");
@@ -168,11 +168,11 @@ void Decompress(char* file_path, char* file_path_out) {
     int size_file = HeaderRead(file_to_decompress);
     byte string_tree[size_file];
     node *new_ht = NULL;
-
+    
     ReadNewTree(file_to_decompress, size_file, string_tree);
     new_ht = CreateHTDecompress(string_tree, new_ht, size_file);
     DecompressTheBytes(new_ht, file_to_decompress, output_file);
-
+    
     fclose(file_to_decompress);
     fclose(output_file);
 
@@ -185,12 +185,12 @@ void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file)
     byte last_byte;
     byte *current = (byte*) malloc(1024 * sizeof(byte));
     node *new_node = root;
-
-
+    
+    
     while((size_current = fread(current, 1, 1024, file_to_decompress)) >= 1){
         if(flag){
             for (i = 7; i >= 0; --i){
-                if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
+                    if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
                     fprintf(output_file, "%c", (byte)GetNodeElement(new_node));
                     new_node = root;
                 }
@@ -201,10 +201,10 @@ void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file)
                     new_node = GetNodeRight(new_node);
             }
         }
-
+        
         flag = 1;
         last_byte = current[--size_current];
-
+        
         for (i = 0; i < size_current; ++i){
             for (j = 7; j >= 0; --j) {
                 if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
@@ -221,7 +221,7 @@ void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file)
     }
 
     for (i = 7; i >= trash; --i){
-
+            
         if(GetNodeLeft(new_node) == NULL && GetNodeRight(new_node) == NULL){
             fprintf(output_file, "%c", (byte)GetNodeElement(new_node));
             new_node = root;
@@ -232,5 +232,5 @@ void DecompressTheBytes(node *root, FILE *file_to_decompress, FILE* output_file)
         else
             new_node = GetNodeRight(new_node);
     }
-
+    
 }
