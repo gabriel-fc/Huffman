@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/GabrielFc/CLionProjects/huffman/main.c" "D:/GabrielFc/CLionProjects/huffman/cmake-build-debug/CMakeFiles/huffman.dir/main.c.obj"
+  "/home/karen/CLionProjects/huffman/main.c" "/home/karen/CLionProjects/huffman/cmake-build-debug/CMakeFiles/huffman.dir/main.c.o"
+  "/home/karen/CLionProjects/huffman/src/charpath.c" "/home/karen/CLionProjects/huffman/cmake-build-debug/CMakeFiles/huffman.dir/src/charpath.c.o"
+  "/home/karen/CLionProjects/huffman/src/header.c" "/home/karen/CLionProjects/huffman/cmake-build-debug/CMakeFiles/huffman.dir/src/header.c.o"
+  "/home/karen/CLionProjects/huffman/src/huffmantree.c" "/home/karen/CLionProjects/huffman/cmake-build-debug/CMakeFiles/huffman.dir/src/huffmantree.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
